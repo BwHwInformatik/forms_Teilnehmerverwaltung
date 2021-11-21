@@ -31,6 +31,7 @@ namespace FormsTeilnehmerVerwaltung
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HauptFenster));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.speichereDateiBtn = new System.Windows.Forms.Button();
             this.oeffneDateiBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -49,6 +50,11 @@ namespace FormsTeilnehmerVerwaltung
             this.loeschenBtn = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btnAlleTeilnehmer = new System.Windows.Forms.Button();
+            this.clearBtn1 = new System.Windows.Forms.Button();
+            this.clearBtn2 = new System.Windows.Forms.Button();
+            this.clearBtn3 = new System.Windows.Forms.Button();
+            this.clearBtn4 = new System.Windows.Forms.Button();
+            this.clearBtn5 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -56,6 +62,7 @@ namespace FormsTeilnehmerVerwaltung
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.MediumVioletRed;
+            this.panel1.Controls.Add(this.speichereDateiBtn);
             this.panel1.Controls.Add(this.oeffneDateiBtn);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pictureBox1);
@@ -65,15 +72,27 @@ namespace FormsTeilnehmerVerwaltung
             this.panel1.Size = new System.Drawing.Size(261, 445);
             this.panel1.TabIndex = 0;
             // 
+            // speichereDateiBtn
+            // 
+            this.speichereDateiBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.speichereDateiBtn.ForeColor = System.Drawing.Color.White;
+            this.speichereDateiBtn.Location = new System.Drawing.Point(48, 404);
+            this.speichereDateiBtn.Name = "speichereDateiBtn";
+            this.speichereDateiBtn.Size = new System.Drawing.Size(143, 29);
+            this.speichereDateiBtn.TabIndex = 3;
+            this.speichereDateiBtn.Text = "Datei speichern";
+            this.speichereDateiBtn.UseVisualStyleBackColor = true;
+            this.speichereDateiBtn.Click += new System.EventHandler(this.speichereDateiBtn_Click);
+            // 
             // oeffneDateiBtn
             // 
             this.oeffneDateiBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.oeffneDateiBtn.ForeColor = System.Drawing.Color.White;
-            this.oeffneDateiBtn.Location = new System.Drawing.Point(48, 404);
+            this.oeffneDateiBtn.Location = new System.Drawing.Point(48, 369);
             this.oeffneDateiBtn.Name = "oeffneDateiBtn";
             this.oeffneDateiBtn.Size = new System.Drawing.Size(143, 29);
             this.oeffneDateiBtn.TabIndex = 2;
-            this.oeffneDateiBtn.Text = "Öffne Datei";
+            this.oeffneDateiBtn.Text = "Datei öffnen";
             this.oeffneDateiBtn.UseVisualStyleBackColor = true;
             this.oeffneDateiBtn.Click += new System.EventHandler(this.OeffneDateiBtn_Click);
             // 
@@ -120,6 +139,7 @@ namespace FormsTeilnehmerVerwaltung
             this.idTB.Name = "idTB";
             this.idTB.Size = new System.Drawing.Size(280, 29);
             this.idTB.TabIndex = 2;
+            this.idTB.TextChanged += new System.EventHandler(this.idTB_TextChanged);
             // 
             // vornameTB
             // 
@@ -128,6 +148,7 @@ namespace FormsTeilnehmerVerwaltung
             this.vornameTB.Name = "vornameTB";
             this.vornameTB.Size = new System.Drawing.Size(280, 29);
             this.vornameTB.TabIndex = 3;
+            this.vornameTB.TextChanged += new System.EventHandler(this.vornameTB_TextChanged);
             // 
             // nachnameTB
             // 
@@ -136,6 +157,7 @@ namespace FormsTeilnehmerVerwaltung
             this.nachnameTB.Name = "nachnameTB";
             this.nachnameTB.Size = new System.Drawing.Size(280, 29);
             this.nachnameTB.TabIndex = 4;
+            this.nachnameTB.TextChanged += new System.EventHandler(this.nachnameTB_TextChanged);
             // 
             // emailTB
             // 
@@ -144,6 +166,7 @@ namespace FormsTeilnehmerVerwaltung
             this.emailTB.Name = "emailTB";
             this.emailTB.Size = new System.Drawing.Size(280, 29);
             this.emailTB.TabIndex = 5;
+            this.emailTB.TextChanged += new System.EventHandler(this.emailTB_TextChanged);
             // 
             // modulTB
             // 
@@ -152,6 +175,7 @@ namespace FormsTeilnehmerVerwaltung
             this.modulTB.Name = "modulTB";
             this.modulTB.Size = new System.Drawing.Size(280, 29);
             this.modulTB.TabIndex = 6;
+            this.modulTB.TextChanged += new System.EventHandler(this.modulTB_TextChanged);
             // 
             // idLbl
             // 
@@ -255,6 +279,111 @@ namespace FormsTeilnehmerVerwaltung
             this.btnAlleTeilnehmer.UseVisualStyleBackColor = false;
             this.btnAlleTeilnehmer.Click += new System.EventHandler(this.btnAlleTeilnehmer_Click);
             // 
+            // clearBtn1
+            // 
+            this.clearBtn1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.clearBtn1.AutoSize = true;
+            this.clearBtn1.BackColor = System.Drawing.SystemColors.Window;
+            this.clearBtn1.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.clearBtn1.FlatAppearance.BorderSize = 0;
+            this.clearBtn1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.clearBtn1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.clearBtn1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.clearBtn1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clearBtn1.ForeColor = System.Drawing.Color.MediumVioletRed;
+            this.clearBtn1.Location = new System.Drawing.Point(637, 96);
+            this.clearBtn1.Name = "clearBtn1";
+            this.clearBtn1.Size = new System.Drawing.Size(23, 23);
+            this.clearBtn1.TabIndex = 18;
+            this.clearBtn1.Text = "x";
+            this.clearBtn1.UseVisualStyleBackColor = false;
+            this.clearBtn1.Visible = false;
+            this.clearBtn1.Click += new System.EventHandler(this.clearBtn1_Click);
+            // 
+            // clearBtn2
+            // 
+            this.clearBtn2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.clearBtn2.AutoSize = true;
+            this.clearBtn2.BackColor = System.Drawing.SystemColors.Window;
+            this.clearBtn2.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.clearBtn2.FlatAppearance.BorderSize = 0;
+            this.clearBtn2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.clearBtn2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.clearBtn2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.clearBtn2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clearBtn2.ForeColor = System.Drawing.Color.MediumVioletRed;
+            this.clearBtn2.Location = new System.Drawing.Point(637, 141);
+            this.clearBtn2.Name = "clearBtn2";
+            this.clearBtn2.Size = new System.Drawing.Size(23, 23);
+            this.clearBtn2.TabIndex = 19;
+            this.clearBtn2.Text = "x";
+            this.clearBtn2.UseVisualStyleBackColor = false;
+            this.clearBtn2.Visible = false;
+            this.clearBtn2.Click += new System.EventHandler(this.clearBtn2_Click);
+            // 
+            // clearBtn3
+            // 
+            this.clearBtn3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.clearBtn3.AutoSize = true;
+            this.clearBtn3.BackColor = System.Drawing.SystemColors.Window;
+            this.clearBtn3.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.clearBtn3.FlatAppearance.BorderSize = 0;
+            this.clearBtn3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.clearBtn3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.clearBtn3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.clearBtn3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clearBtn3.ForeColor = System.Drawing.Color.MediumVioletRed;
+            this.clearBtn3.Location = new System.Drawing.Point(637, 184);
+            this.clearBtn3.Name = "clearBtn3";
+            this.clearBtn3.Size = new System.Drawing.Size(23, 23);
+            this.clearBtn3.TabIndex = 20;
+            this.clearBtn3.Text = "x";
+            this.clearBtn3.UseVisualStyleBackColor = false;
+            this.clearBtn3.Visible = false;
+            this.clearBtn3.Click += new System.EventHandler(this.clearBtn3_Click);
+            // 
+            // clearBtn4
+            // 
+            this.clearBtn4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.clearBtn4.AutoSize = true;
+            this.clearBtn4.BackColor = System.Drawing.SystemColors.Window;
+            this.clearBtn4.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.clearBtn4.FlatAppearance.BorderSize = 0;
+            this.clearBtn4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.clearBtn4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.clearBtn4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.clearBtn4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clearBtn4.ForeColor = System.Drawing.Color.MediumVioletRed;
+            this.clearBtn4.Location = new System.Drawing.Point(637, 229);
+            this.clearBtn4.Name = "clearBtn4";
+            this.clearBtn4.Size = new System.Drawing.Size(23, 23);
+            this.clearBtn4.TabIndex = 21;
+            this.clearBtn4.Text = "x";
+            this.clearBtn4.UseVisualStyleBackColor = false;
+            this.clearBtn4.Visible = false;
+            this.clearBtn4.Click += new System.EventHandler(this.clearBtn4_Click);
+            // 
+            // clearBtn5
+            // 
+            this.clearBtn5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.clearBtn5.AutoSize = true;
+            this.clearBtn5.BackColor = System.Drawing.SystemColors.Window;
+            this.clearBtn5.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.clearBtn5.FlatAppearance.BorderSize = 0;
+            this.clearBtn5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.clearBtn5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.clearBtn5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.clearBtn5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clearBtn5.ForeColor = System.Drawing.Color.MediumVioletRed;
+            this.clearBtn5.Location = new System.Drawing.Point(637, 274);
+            this.clearBtn5.Name = "clearBtn5";
+            this.clearBtn5.Size = new System.Drawing.Size(23, 23);
+            this.clearBtn5.TabIndex = 22;
+            this.clearBtn5.Text = "x";
+            this.clearBtn5.UseVisualStyleBackColor = false;
+            this.clearBtn5.Visible = false;
+            this.clearBtn5.Click += new System.EventHandler(this.clearBtn5_Click);
+            // 
             // HauptFenster
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -262,6 +391,11 @@ namespace FormsTeilnehmerVerwaltung
             this.BackColor = System.Drawing.Color.Lavender;
             this.ClientSize = new System.Drawing.Size(832, 445);
             this.ControlBox = false;
+            this.Controls.Add(this.clearBtn5);
+            this.Controls.Add(this.clearBtn4);
+            this.Controls.Add(this.clearBtn3);
+            this.Controls.Add(this.clearBtn2);
+            this.Controls.Add(this.clearBtn1);
             this.Controls.Add(this.btnAlleTeilnehmer);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.loeschenBtn);
@@ -314,6 +448,12 @@ namespace FormsTeilnehmerVerwaltung
         private System.Windows.Forms.Button loeschenBtn;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button btnAlleTeilnehmer;
+        private System.Windows.Forms.Button speichereDateiBtn;
+        private System.Windows.Forms.Button clearBtn1;
+        private System.Windows.Forms.Button clearBtn2;
+        private System.Windows.Forms.Button clearBtn3;
+        private System.Windows.Forms.Button clearBtn4;
+        private System.Windows.Forms.Button clearBtn5;
     }
 }
 

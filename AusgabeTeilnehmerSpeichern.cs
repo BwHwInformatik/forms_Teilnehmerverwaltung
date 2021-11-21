@@ -17,6 +17,10 @@ namespace FormsTeilnehmerVerwaltung
             InitializeComponent();
 
             idTB.Text = neuerTeilnehmer.ID;
+            vornameTB.Text = neuerTeilnehmer.VorName;
+            nachnameTB.Text = neuerTeilnehmer.NachName;
+            emailTB.Text = neuerTeilnehmer.EMail;
+            modulTB.Text = neuerTeilnehmer.Modul;
         }
 
         private void beendenBtn_Click(object sender, EventArgs e) => this.Close();
