@@ -31,8 +31,9 @@ namespace FormsTeilnehmerVerwaltung
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HauptFenster));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.speichereDateiBtn = new System.Windows.Forms.Button();
-            this.oeffneDateiBtn = new System.Windows.Forms.Button();
+            this.csvSpeichernBtn = new System.Windows.Forms.Button();
+            this.jsonSpeichernBtn = new System.Windows.Forms.Button();
+            this.jsonOeffnenBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.beendenBtn = new System.Windows.Forms.Button();
@@ -62,8 +63,9 @@ namespace FormsTeilnehmerVerwaltung
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.MediumVioletRed;
-            this.panel1.Controls.Add(this.speichereDateiBtn);
-            this.panel1.Controls.Add(this.oeffneDateiBtn);
+            this.panel1.Controls.Add(this.csvSpeichernBtn);
+            this.panel1.Controls.Add(this.jsonSpeichernBtn);
+            this.panel1.Controls.Add(this.jsonOeffnenBtn);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -72,29 +74,41 @@ namespace FormsTeilnehmerVerwaltung
             this.panel1.Size = new System.Drawing.Size(261, 445);
             this.panel1.TabIndex = 0;
             // 
-            // speichereDateiBtn
+            // csvSpeichernBtn
             // 
-            this.speichereDateiBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.speichereDateiBtn.ForeColor = System.Drawing.Color.White;
-            this.speichereDateiBtn.Location = new System.Drawing.Point(48, 404);
-            this.speichereDateiBtn.Name = "speichereDateiBtn";
-            this.speichereDateiBtn.Size = new System.Drawing.Size(143, 29);
-            this.speichereDateiBtn.TabIndex = 3;
-            this.speichereDateiBtn.Text = "Datei speichern";
-            this.speichereDateiBtn.UseVisualStyleBackColor = true;
-            this.speichereDateiBtn.Click += new System.EventHandler(this.speichereDateiBtn_Click);
+            this.csvSpeichernBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.csvSpeichernBtn.ForeColor = System.Drawing.Color.White;
+            this.csvSpeichernBtn.Location = new System.Drawing.Point(48, 379);
+            this.csvSpeichernBtn.Name = "csvSpeichernBtn";
+            this.csvSpeichernBtn.Size = new System.Drawing.Size(143, 29);
+            this.csvSpeichernBtn.TabIndex = 4;
+            this.csvSpeichernBtn.Text = "Csv-Datei speichern";
+            this.csvSpeichernBtn.UseVisualStyleBackColor = true;
+            this.csvSpeichernBtn.Click += new System.EventHandler(this.csvSpeichern_Click);
             // 
-            // oeffneDateiBtn
+            // jsonSpeichernBtn
             // 
-            this.oeffneDateiBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.oeffneDateiBtn.ForeColor = System.Drawing.Color.White;
-            this.oeffneDateiBtn.Location = new System.Drawing.Point(48, 369);
-            this.oeffneDateiBtn.Name = "oeffneDateiBtn";
-            this.oeffneDateiBtn.Size = new System.Drawing.Size(143, 29);
-            this.oeffneDateiBtn.TabIndex = 2;
-            this.oeffneDateiBtn.Text = "Datei öffnen";
-            this.oeffneDateiBtn.UseVisualStyleBackColor = true;
-            this.oeffneDateiBtn.Click += new System.EventHandler(this.OeffneDateiBtn_Click);
+            this.jsonSpeichernBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.jsonSpeichernBtn.ForeColor = System.Drawing.Color.White;
+            this.jsonSpeichernBtn.Location = new System.Drawing.Point(48, 344);
+            this.jsonSpeichernBtn.Name = "jsonSpeichernBtn";
+            this.jsonSpeichernBtn.Size = new System.Drawing.Size(143, 29);
+            this.jsonSpeichernBtn.TabIndex = 3;
+            this.jsonSpeichernBtn.Text = "Json-Datei speichern";
+            this.jsonSpeichernBtn.UseVisualStyleBackColor = true;
+            this.jsonSpeichernBtn.Click += new System.EventHandler(this.jsonSpeichern_Click);
+            // 
+            // jsonOeffnenBtn
+            // 
+            this.jsonOeffnenBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.jsonOeffnenBtn.ForeColor = System.Drawing.Color.White;
+            this.jsonOeffnenBtn.Location = new System.Drawing.Point(48, 309);
+            this.jsonOeffnenBtn.Name = "jsonOeffnenBtn";
+            this.jsonOeffnenBtn.Size = new System.Drawing.Size(143, 29);
+            this.jsonOeffnenBtn.TabIndex = 2;
+            this.jsonOeffnenBtn.Text = "Json-Datei öffnen";
+            this.jsonOeffnenBtn.UseVisualStyleBackColor = true;
+            this.jsonOeffnenBtn.Click += new System.EventHandler(this.jsonOeffnen_Click);
             // 
             // label1
             // 
@@ -433,7 +447,7 @@ namespace FormsTeilnehmerVerwaltung
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button beendenBtn;
-        private System.Windows.Forms.Button oeffneDateiBtn;
+        private System.Windows.Forms.Button jsonOeffnenBtn;
         private System.Windows.Forms.TextBox idTB;
         private System.Windows.Forms.TextBox vornameTB;
         private System.Windows.Forms.TextBox nachnameTB;
@@ -448,12 +462,13 @@ namespace FormsTeilnehmerVerwaltung
         private System.Windows.Forms.Button loeschenBtn;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button btnAlleTeilnehmer;
-        private System.Windows.Forms.Button speichereDateiBtn;
+        private System.Windows.Forms.Button jsonSpeichernBtn;
         private System.Windows.Forms.Button clearBtn1;
         private System.Windows.Forms.Button clearBtn2;
         private System.Windows.Forms.Button clearBtn3;
         private System.Windows.Forms.Button clearBtn4;
         private System.Windows.Forms.Button clearBtn5;
+        private System.Windows.Forms.Button csvSpeichernBtn;
     }
 }
 

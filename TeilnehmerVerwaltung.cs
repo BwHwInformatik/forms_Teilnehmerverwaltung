@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using Newtonsoft.Json;
+using CsvHelper;
+using System.Globalization;
 
 namespace FormsTeilnehmerVerwaltung
 {
@@ -175,8 +177,11 @@ namespace FormsTeilnehmerVerwaltung
                 clearBtn5.Visible = true;
             modulTB.Focus();
         }
-        private void OeffneDateiBtn_Click(object sender, EventArgs e)
+        private void jsonOeffnen_Click(object sender, EventArgs e)
         {
+
+            //var configString = File.ReadAllText(@"h:\test\config.json");
+
             OpenFileDialog openFileDialog = new OpenFileDialog
             {
                 DefaultExt = ".json",
@@ -188,11 +193,11 @@ namespace FormsTeilnehmerVerwaltung
 
                 bwhwTeilnehmer = jsonTeilnehmer;
                 ComboBox_Aktualisieren();
-                MessageBox.Show("Daten wurden aus der Datei geladen !");
+                MessageBox.Show("Daten wurden aus der Json-Datei geladen !");
 
             }
         }
-        private void speichereDateiBtn_Click(object sender, EventArgs e)
+        private void jsonSpeichern_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog
             {
@@ -203,7 +208,26 @@ namespace FormsTeilnehmerVerwaltung
             {
                 File.WriteAllText(saveFileDialog.FileName, JsonConvert.SerializeObject(bwhwTeilnehmer, Formatting.Indented));
 
-                MessageBox.Show("Daten wurden in die Datei gespeichert !");
+                MessageBox.Show("Daten wurden in die Json-Datei gespeichert !");
+            }
+        }
+
+        private void csvSpeichern_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog
+            {
+                DefaultExt = ".csv",
+                Filter = "CSV Datei (.csv)|*.csv"
+            };
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                using (var datenStromSchreiber = new StreamWriter(saveFileDialog.FileName))
+                using (var csvSchreiber = new CsvWriter(datenStromSchreiber, CultureInfo.InvariantCulture))
+                {
+                    csvSchreiber.WriteRecords<TeilnehmerModel>(bwhwTeilnehmer);
+                }
+
+                MessageBox.Show("Daten wurden in die CSV-Datei gespeichert !");
             }
         }
     }
